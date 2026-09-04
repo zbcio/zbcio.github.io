@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>ZhangBaiCheng&#39;s Programming Blog</title>
+  
+  <subtitle>Sharp tools make good work</subtitle>
+  <link href="https://zbcio.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://zbcio.github.io/"/>
+  <updated>2026-09-04T10:00:36.817Z</updated>
+  <id>https://zbcio.github.io/</id>
+  
+  <author>
+    <name>百成</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>安装PostgreSQL遇到的问题</title>
+    <link href="https://zbcio.github.io/cn/postgresql/postgresql-install-question/"/>
+    <id>https://zbcio.github.io/cn/postgresql/postgresql-install-question/</id>
+    <published>2020-07-01T00:00:00.000Z</published>
+    <updated>2026-09-04T10:00:36.817Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="安装完成后提示如下信息"><a href="#安装完成后提示如下信息" class="headerlink" title="安装完成后提示如下信息"></a>安装完成后提示如下信息</h1><pre><code class="hljs">Problem running post-install step. Installation may not complete correctly The database cluster initialisation failed.</code></pre><h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><p>由于所制定的data目录没有写入权限。</p><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>可在安装之后参考如下步骤进行数据库初始化：</p><ol><li><p>修改data目录权限</p><p> 此处省略。</p></li><li><p>初始化数据库，可使用initdb –help查看详细参数设置：</p><p> initdb -U postgres -W -D “C:\Program Files\PostgreSQL\10\data”</p></li><li><p>启动pg</p><p> pg_ctl -D “C:\Program Files\PostgreSQL\10\data” -l logfile start</p></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;安装完成后提示如下信息&quot;&gt;&lt;a href=&quot;#安装完成后提示如下信息&quot; class=&quot;headerlink&quot; title=&quot;安装完成后提示如下信息&quot;&gt;&lt;/a&gt;安装完成后提示如下信息&lt;/h1&gt;&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;Problem runni</summary>
+      
+    
+    
+    
+    <category term="postgresql" scheme="https://zbcio.github.io/categories/postgresql/"/>
+    
+    
+    <category term="PostgreSQL" scheme="https://zbcio.github.io/tags/PostgreSQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JVM运行时异常StackOverflowError和OutOfMemoryError</title>
+    <link href="https://zbcio.github.io/cn/jvm/stackoverflowerror-and-outofmemoryerror/"/>
+    <id>https://zbcio.github.io/cn/jvm/stackoverflowerror-and-outofmemoryerror/</id>
+    <published>2020-07-01T00:00:00.000Z</published>
+    <updated>2026-09-04T10:00:36.817Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="StackOverflowError"><a href="#StackOverflowError" class="headerlink" title="StackOverflowError"></a>StackOverflowError</h1><ol><li>线程请求的栈容量超过了JVM栈允许的最大容量。</li><li>线程请求的栈容量超过本地方法栈允许的最大容量。</li></ol><h1 id="OutOfMemoryError"><a href="#OutOfMemoryError" class="headerlink" title="OutOfMemoryError"></a>OutOfMemoryError</h1><ol><li>JVM栈可以动态扩展，并且扩展的动作已经尝试过，但是目前无法申请到足够的内存去完成扩展，或者在建立新的线程时没有足够的内存去创建对应的JVM栈。</li><li>实际所需的堆超过了自动内存管理系统（GC）能提供的最大容量。</li><li>方法区的内存空间不能满足内存分配请求。</li><li>当创建类或接口的时候，构造运行时常量池所需要的内存空间超过了方法区所能提供的最大值。</li><li>本地方法栈可以动态扩展，并且扩展的动作已经尝试过，但是目前无法申请到足够的内存去完成扩展，或者在建立新的线程时没有足够的内存去创建对应的本地方法栈。</li></ol><p>备注：摘自《Java虚拟机规范》。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;StackOverflowError&quot;&gt;&lt;a href=&quot;#StackOverflowError&quot; class=&quot;headerlink&quot; title=&quot;StackOverflowError&quot;&gt;&lt;/a&gt;StackOverflowError&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;</summary>
+      
+    
+    
+    
+    <category term="jvm" scheme="https://zbcio.github.io/categories/jvm/"/>
+    
+    
+    <category term="JVM" scheme="https://zbcio.github.io/tags/JVM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring Batch学习汇总</title>
+    <link href="https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/Spring-Batch/spring-batch/"/>
+    <id>https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/Spring-Batch/spring-batch/</id>
+    <published>2019-02-26T00:00:00.000Z</published>
+    <updated>2026-09-04T10:00:36.817Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="0-摘要"><a href="#0-摘要" class="headerlink" title="0 摘要"></a>0 摘要</h2><p>本文整理自Spring Batch官方文档。</p><p>Spring Batch官方文档中，提供两种实例代码，XML和Java Config，默认选择Java Config。</p><h2 id="1-Spring-Batch-简介"><a href="#1-Spring-Batch-简介" class="headerlink" title="1 Spring Batch 简介"></a>1 Spring Batch 简介</h2><h3 id="1-1-Spring-Batch"><a href="#1-1-Spring-Batch" class="headerlink" title="1.1 Spring Batch"></a>1.1 Spring Batch</h3><p>Spring Batch 是一个轻量级，全面的批处理框架，旨在开发对企业系统日常运营至关重要的强大批处理应用程序。Spring Batch 以Spring框架为基础，开发人员可以使用Spring框架的原有服务。</p><h3 id="1-2-使用场景"><a href="#1-2-使用场景" class="headerlink" title="1.2 使用场景"></a>1.2 使用场景</h3><p>通常一个典型的批处理程序如下：</p><ul><li>Read：从数据库，文件或队列中读取大量记录。</li><li>Process：以某种方式处理数据。</li><li>Write：以修改的形式写回数据。</li></ul><p>Spring Batch自动执行此基本批处理迭代，提供处理类似事务的功能，通常在脱机环境中处理，无需任何用户交互。批处理作业是大多数IT项目的一部分，Spring Batch是唯一提供强大的企业级解决方案的开源框架。</p><p>业务场景</p><ul><li>定期提交批处理</li><li>并发批处理：并行处理作业</li><li>分阶段的企业消息驱动处理</li><li>大规模并行批处理</li><li>失败后手动或预定重启</li><li>依赖步骤的顺序处理（使用扩展的toworkflow驱动批次）</li><li>部分处理：跳过记录（例如，回滚时）</li><li>整批交易，适用于批量较小或现有存储过程&#x2F;脚本的情况</li></ul><p>技术目标</p><ul><li>批处理开发人员使用Spring编程模型：专注于业务逻辑，让框架负责基础架构。</li><li>清楚地分离基础架构，批处理执行环境和批处理应用程序之间的关注点。</li><li>提供通用的核心执行服务作为所有项目可以实现的接口。</li><li>提供可以“开箱即用”使用的核心执行接口的简单和默认实现。</li><li>通过在所有层中利用spring框架，易于配置，定制和扩展服务。</li><li>所有现有核心服务都应易于更换或扩展，而不会对基础架构层产生任何影响。</li><li>提供一个简单的部署模型，使用Maven构建的架构JAR与应用程序完全分离。</li></ul><h3 id="1-3-Spring-Batch-架构"><a href="#1-3-Spring-Batch-架构" class="headerlink" title="1.3 Spring Batch 架构"></a>1.3 Spring Batch 架构</h3><p>Spring Batch的设计具有可扩展性和多样化的最终用户群。下图显示了支持最终用户开发人员的可扩展性和易用性的分层体系结构。</p><p><img src="https://docs.spring.io/spring-batch/4.1.x/reference/html/images/spring-batch-layers.png" alt="Spring Batch Architecture"></p><p>这种分层架构突出了三个主要的高级组件：应用程序，核心和基础架构。该应用程序包含开发人员使用Spring Batch编写的所有批处理作业和自定义代码。Batch Core包含启动和控制批处理作业所需的核心运行时类。它包括实现 JobLauncher，Job和Step。Application和Core都建立在通用基础架构之上。此基础结构包含常见的读取器和编写器和服务（例如RetryTemplate），应用程序开发人员（读取器和编写器，如ItemReader和ItemWriter）以及核心框架本身（重试，它是自己的库）都使用它们。</p><h3 id="1-4-官方提供的构建策略"><a href="#1-4-官方提供的构建策略" class="headerlink" title="1.4 官方提供的构建策略"></a>1.4 官方提供的构建策略</h3><p>在开始设计批处理作业时，应将业务逻辑分解为一系列步骤，这些步骤可使用以下标准构建块实现：</p><ul><li><p>转换应用程序：对于由外部系统提供或生成的每种类型的文件，必须创建转换应用程序，以将提供的事务记录转换为处理所需的标准格式。</p></li><li><p>验证应用程序：验证应用程序确保所有输入&#x2F;输出记录正确且一致。</p></li><li><p>提取应用程序：从数据库或输入文件中读取一组记录，根据预定义规则选择记录，并将记录写入输出文件的应用程序。</p></li><li><p>提取&#x2F;更新应用程序：从数据库或输入文件中读取记录，并对由每个输入记录中的数据驱动的数据库或输出文件进行更改的应用程序。</p></li><li><p>处理和更新应用程序：从提取或验证应用程序对输入事务执行处理的应用程序。处理通常涉及读取数据库以获取处理所需的数据，可能更新数据库并创建输出处理的记录。</p></li><li><p>输出&#x2F;格式应用程序：读取输入文件的应用程序，根据标准格式从该记录重组数据，并生成用于打印或传输到另一个程序或系统的输出文件。</p></li></ul><p>批量应用程序还可以按其输入源进行分类：</p><ul><li>数据库驱动的应用程序由从数据库检索的行或值驱动。</li><li>文件驱动的应用程序由从文件中检索的记录或值驱动。</li><li>消息驱动的应用程序由从消息队列中检索的消息驱动。</li></ul><h2 id="2-批处理的基本概念"><a href="#2-批处理的基本概念" class="headerlink" title="2 批处理的基本概念"></a>2 批处理的基本概念</h2><p>下图是批量参考体系结构的简化版本，已使用了数十年。Spring Batch提供了健壮，可维护系统中常见的层，组件和技术服务的物理实现，这些系统用于解决简单到复杂批处理应用程序的创建问题，其基础结构和扩展可满足非常复杂的处理需求。</p><p><img src="https://docs.spring.io/spring-batch/4.1.x/reference/html/images/spring-batch-reference-model.png" alt="Batch SysArch"></p><h3 id="2-1-Job"><a href="#2-1-Job" class="headerlink" title="2.1 Job"></a>2.1 Job</h3><p>在Spring Batch中，Job是Step实例的容器。</p><p>Job的配置包含：</p><ul><li>易于理解的名字</li><li>Step实例的定义和排序</li><li>是否可重启</li></ul><h4 id="2-1-1-JobInstance"><a href="#2-1-1-JobInstance" class="headerlink" title="2.1.1 JobInstance"></a>2.1.1 JobInstance</h4><h4 id="2-1-2-JobParameters"><a href="#2-1-2-JobParameters" class="headerlink" title="2.1.2 JobParameters"></a>2.1.2 JobParameters</h4><h4 id="2-1-3-JobExecution"><a href="#2-1-3-JobExecution" class="headerlink" title="2.1.3 JobExecution"></a>2.1.3 JobExecution</h4><h3 id="2-2-Step"><a href="#2-2-Step" class="headerlink" title="2.2 Step"></a>2.2 Step</h3><h3 id="2-3-ExecutionContext"><a href="#2-3-ExecutionContext" class="headerlink" title="2.3 ExecutionContext"></a>2.3 ExecutionContext</h3><h3 id="2-4-JobRepository"><a href="#2-4-JobRepository" class="headerlink" title="2.4 JobRepository"></a>2.4 JobRepository</h3><h3 id="2-5-JobLauncher"><a href="#2-5-JobLauncher" class="headerlink" title="2.5 JobLauncher"></a>2.5 JobLauncher</h3><h3 id="2-6-Item-Reader"><a href="#2-6-Item-Reader" class="headerlink" title="2.6 Item Reader"></a>2.6 Item Reader</h3><h3 id="2-7-Item-Writer"><a href="#2-7-Item-Writer" class="headerlink" title="2.7 Item Writer"></a>2.7 Item Writer</h3><h3 id="2-8-Item-Processor"><a href="#2-8-Item-Processor" class="headerlink" title="2.8 Item Processor"></a>2.8 Item Processor</h3><h3 id="2-9-Batch-Namespace"><a href="#2-9-Batch-Namespace" class="headerlink" title="2.9 Batch Namespace"></a>2.9 Batch Namespace</h3>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;0-摘要&quot;&gt;&lt;a href=&quot;#0-摘要&quot; class=&quot;headerlink&quot; title=&quot;0 摘要&quot;&gt;&lt;/a&gt;0 摘要&lt;/h2&gt;&lt;p&gt;本文整理自Spring Batch官方文档。&lt;/p&gt;
+&lt;p&gt;Spring Batch官方文档中，提供两种实例代码，XML和J</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="Spring Batch" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/Spring-Batch/"/>
+    
+    
+    <category term="Spring Batch" scheme="https://zbcio.github.io/tags/Spring-Batch/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java Config 注解</title>
+    <link href="https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/Java/java-config/"/>
+    <id>https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/Java/java-config/</id>
+    <published>2019-02-25T00:00:00.000Z</published>
+    <updated>2026-09-04T10:00:36.817Z</updated>
+    
+    <content type="html"><![CDATA[<p>java config是指基于java配置的spring。传统的Spring一般都是基本xml配置的，后来spring3.0新增了许多java config的注解，特别是spring boot，基本都是清一色的java config。</p><h4 id="Configuration"><a href="#Configuration" class="headerlink" title="@Configuration"></a>@Configuration</h4><p>在类上打上这一标签，表示这个类是配置类</p><h4 id="ComponentScan"><a href="#ComponentScan" class="headerlink" title="@ComponentScan"></a>@ComponentScan</h4><p>相当于xml的</p><pre><code class="hljs">&lt;context:componentscan basepakage=&gt;</code></pre><h4 id="Bean"><a href="#Bean" class="headerlink" title="@Bean"></a>@Bean</h4><p>bean的定义，相当于xml的</p><pre><code class="hljs">&lt;bean id=&quot;objectMapper&quot; class=&quot;org.codehaus.jackson.map.ObjectMapper&quot; /&gt; </code></pre><h4 id="EnableWebMvc"><a href="#EnableWebMvc" class="headerlink" title="@EnableWebMvc"></a>@EnableWebMvc</h4><p>相当于xml的</p><pre><code class="hljs">&lt;mvc:annotation-driven&gt;</code></pre><h4 id="ImportResource"><a href="#ImportResource" class="headerlink" title="@ImportResource"></a>@ImportResource</h4><p>相当于xml的</p><pre><code class="hljs">&lt;import resource=&quot;applicationContext-cache.xml&quot;&gt;</code></pre><h4 id="PropertySource"><a href="#PropertySource" class="headerlink" title="@PropertySource"></a>@PropertySource</h4><p>spring 3.1开始引入，它是基于java config的注解，用于读取properties文件</p><h4 id="Profile"><a href="#Profile" class="headerlink" title="@Profile"></a>@Profile</h4><p>spring3.1开始引入,一般用于多环境配置，激活时可用@ActiveProfiles注解，@ActiveProfiles(“dev”)等同于xml配置</p><pre><code class="hljs">&lt;beans profile=&quot;dev&quot;&gt;    &lt;bean id=&quot;beanname&quot; class=&quot;com.pz.demo.ProductRPC&quot;/&gt;&lt;/beans&gt;</code></pre><p>激活该profile spring.profiles.active，也可设置默认值 spring.profiles.default</p><pre><code class="hljs">&lt;context-param&gt;    &lt;param-name&gt;spring.profiles.default&lt;/param-name&gt;    &lt;param-value&gt;dev&lt;/param-value&gt;&lt;/context-param&gt;</code></pre><p>参考：<a href="https://www.cnblogs.com/whx7762/p/7828435.html">Java Config 注解</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;java config是指基于java配置的spring。传统的Spring一般都是基本xml配置的，后来spring3.0新增了许多java config的注解，特别是spring boot，基本都是清一色的java config。&lt;/p&gt;
+&lt;h4 id=&quot;Configu</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="Java" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/Java/"/>
+    
+    
+    <category term="Java" scheme="https://zbcio.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>gson的一些用法</title>
+    <link href="https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/gson/gson-usage/"/>
+    <id>https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/gson/gson-usage/</id>
+    <published>2018-05-18T00:00:00.000Z</published>
+    <updated>2026-09-04T10:00:36.817Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="1、自定义json中key的名字"><a href="#1、自定义json中key的名字" class="headerlink" title="1、自定义json中key的名字"></a>1、自定义json中key的名字</h4><p>可以在Java里面的属性上，加上如下注释：@SerializedName()</p><p>例如：  </p><pre><code class="hljs">@SerializedName(&quot;businesscontrolno&quot;)</code></pre><p>参考：<a href="https://www.jianshu.com/p/e740196225a4">https://www.jianshu.com/p/e740196225a4</a></p><h4 id="2、gson处理null字段"><a href="#2、gson处理null字段" class="headerlink" title="2、gson处理null字段"></a>2、gson处理null字段</h4><pre><code class="hljs">Gson g = new GsonBuilder().serializeNulls().create();</code></pre><h4 id="3、gson处理日期字段"><a href="#3、gson处理日期字段" class="headerlink" title="3、gson处理日期字段"></a>3、gson处理日期字段</h4><pre><code class="hljs">Gson g = new GsonBuilder().setDateFormat(&quot;yyyy-MM-dd hh:mm:ss&quot;).create();</code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h4 id=&quot;1、自定义json中key的名字&quot;&gt;&lt;a href=&quot;#1、自定义json中key的名字&quot; class=&quot;headerlink&quot; title=&quot;1、自定义json中key的名字&quot;&gt;&lt;/a&gt;1、自定义json中key的名字&lt;/h4&gt;&lt;p&gt;可以在Java里面的属性上，</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="gson" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/gson/"/>
+    
+    
+    <category term="gson" scheme="https://zbcio.github.io/tags/gson/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ElasticSearch的一些操作</title>
+    <link href="https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/ElasticSearch/elasticsearch-operation/"/>
+    <id>https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/ElasticSearch/elasticsearch-operation/</id>
+    <published>2018-05-16T00:00:00.000Z</published>
+    <updated>2026-09-04T10:00:36.817Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1、update"><a href="#1、update" class="headerlink" title="1、update"></a>1、update</h3><p>POST <a href="http://es.zbc.io/%7Bindex%7D/%7Btype%7D/%7Bid%7D/_update">http://es.zbc.io/{index}/{type}/{id}/_update</a></p><pre><code class="hljs">&#123;  &quot;doc&quot;: &#123;    &quot;&#123;column&#125;&quot;: &quot;&#123;value&#125;&quot;  &#125;&#125;</code></pre><p>例如：<br>POST <a href="http://es.zbc.io/logstash-car-ctrl/prpbusinesscontrol/">http://es.zbc.io/logstash-car-ctrl/prpbusinesscontrol/</a></p><pre><code class="hljs">B201800044820/_update&#123;  &quot;doc&quot;: &#123;    &quot;validstatus&quot;: &quot;0&quot;  &#125;&#125;</code></pre><p>参考：<a href="https://www.elastic.co/guide/cn/elasticsearch/guide/current/partial-updates.html">https://www.elastic.co/guide/cn/elasticsearch/guide/current/partial-updates.html</a></p><h4 id="2、insert"><a href="#2、insert" class="headerlink" title="2、insert"></a>2、insert</h4><p>PUT <a href="http://es.zbc.io/%7Bindex%7D/%7Btype%7D/%7Bid%7D">http://es.zbc.io/{index}/{type}/{id}</a></p><pre><code class="hljs">&#123;  &quot;field&quot;: &quot;value&quot;,  ...&#125;</code></pre><p>例如：<br>PUT <a href="http://es.zbc.io/logstash-car-ctrl/prpbusinesscontrol/B201800044820">http://es.zbc.io/logstash-car-ctrl/prpbusinesscontrol/B201800044820</a></p><pre><code class="hljs">&#123;    &quot;validstatus&quot;: &quot;0&quot;&#125;</code></pre><h4 id="3、创建-raw索引"><a href="#3、创建-raw索引" class="headerlink" title="3、创建.raw索引"></a>3、创建.raw索引</h4><p>PUT <a href="http://es.zbc.io/%7Bindex%7D">http://es.zbc.io/{index}</a></p><pre><code class="hljs">&#123;  &quot;mappings&quot;: &#123;    &quot;&#123;type&#125;&quot;: &#123;      &quot;properties&quot;: &#123;        &quot;&#123;column&#125;&quot;: &#123;          &quot;type&quot;: &quot;string&quot;,          &quot;fields&quot;: &#123;            &quot;raw&quot;: &#123;              &quot;type&quot;: &quot;string&quot;,              &quot;index&quot;: &quot;not_analyzed&quot;            &#125;          &#125;        &#125;      &#125;    &#125;  &#125;&#125;</code></pre><p>例如：<br>POST <a href="http://es.zbc.io/logstash-car-ctrl">http://es.zbc.io/logstash-car-ctrl</a></p><pre><code class="hljs">&#123;  &quot;mappings&quot;: &#123;    &quot;prpbusinesscontrol&quot;: &#123;      &quot;properties&quot;: &#123;        &quot;engineno&quot;: &#123;          &quot;type&quot;: &quot;string&quot;,          &quot;fields&quot;: &#123;            &quot;raw&quot;: &#123;              &quot;type&quot;: &quot;string&quot;,              &quot;index&quot;: &quot;not_analyzed&quot;            &#125;          &#125;        &#125;      &#125;    &#125;  &#125;&#125;</code></pre><h4 id="4、新增字段"><a href="#4、新增字段" class="headerlink" title="4、新增字段"></a>4、新增字段</h4><p>POST <a href="http://es.zbc.io/%7Bindex%7D/%7Btype%7D/_mapping">http://es.zbc.io/{index}/{type}/_mapping</a></p><pre><code class="hljs">&#123;  &quot;properties&quot;: &#123;    &quot;&#123;column&#125;&quot;: &#123;      &quot;type&quot;: &quot;string&quot;,      &quot;fields&quot;: &#123;        &quot;raw&quot;: &#123;          &quot;type&quot;: &quot;string&quot;,          &quot;index&quot;: &quot;not_analyzed&quot;        &#125;      &#125;    &#125;  &#125;&#125;</code></pre><p>例如：<br>POST <a href="http://es.zbc.io/logstash-car-ctrl/prpbusinesscontrol/_mapping">http://es.zbc.io/logstash-car-ctrl/prpbusinesscontrol/_mapping</a></p><pre><code class="hljs">&#123;  &quot;properties&quot;: &#123;    &quot;vinno2&quot;: &#123;      &quot;type&quot;: &quot;string&quot;,      &quot;fields&quot;: &#123;        &quot;raw&quot;: &#123;          &quot;type&quot;: &quot;string&quot;,          &quot;index&quot;: &quot;not_analyzed&quot;        &#125;      &#125;    &#125;  &#125;&#125;</code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;1、update&quot;&gt;&lt;a href=&quot;#1、update&quot; class=&quot;headerlink&quot; title=&quot;1、update&quot;&gt;&lt;/a&gt;1、update&lt;/h3&gt;&lt;p&gt;POST &lt;a href=&quot;http://es.zbc.io/%7Bindex%7D/%7B</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="ElasticSearch" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/ElasticSearch/"/>
+    
+    
+    <category term="ElasticSearch" scheme="https://zbcio.github.io/tags/ElasticSearch/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ElasticSearch报错汇总</title>
+    <link href="https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/ElasticSearch/elasticsearch-faq/"/>
+    <id>https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/ElasticSearch/elasticsearch-faq/</id>
+    <published>2018-05-15T00:00:00.000Z</published>
+    <updated>2026-09-04T10:00:36.817Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1、error-’Cannot-allocate-memory’-errno-12"><a href="#1、error-’Cannot-allocate-memory’-errno-12" class="headerlink" title="1、error&#x3D;’Cannot allocate memory’ (errno&#x3D;12)"></a>1、error&#x3D;’Cannot allocate memory’ (errno&#x3D;12)</h3><h4 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h4><p>这种情况是因为内存不足</p><h4 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h4><p>使用如下方式修改jvm启动内存参数：</p><pre><code class="hljs">[es@CentOS ~]$ vi elasticsearch/config/jvm.options-Xms512m-Xmx512m</code></pre><h3 id="2、max-virtual-memory-areas-vm-max-map-count-65530-is-too-low-increase-to-at-least-262144"><a href="#2、max-virtual-memory-areas-vm-max-map-count-65530-is-too-low-increase-to-at-least-262144" class="headerlink" title="2、max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]"></a>2、max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]</h3><h4 id="解决办法：-1"><a href="#解决办法：-1" class="headerlink" title="解决办法："></a>解决办法：</h4><p>切换到root用户修改配置sysctl.conf</p><pre><code class="hljs">vi /etc/sysctl.conf</code></pre><p>添加下面配置：</p><pre><code class="hljs">vm.max_map_count=655360</code></pre><p>并执行命令：</p><pre><code class="hljs">sysctl -p</code></pre><p>然后，重新启动elasticsearch，即可启动成功。</p><h3 id="3、-es-CentOS-elasticsearch-head-npm-install"><a href="#3、-es-CentOS-elasticsearch-head-npm-install" class="headerlink" title="3、[es@CentOS elasticsearch-head]# npm install"></a>3、[es@CentOS elasticsearch-head]# npm install</h3><p>npm ERR! Error: CERT_UNTRUSTED</p><h4 id="解决办法：-2"><a href="#解决办法：-2" class="headerlink" title="解决办法："></a>解决办法：</h4><p>这是因为ssl验证问题，使用下面的命令取消ssl验证即可解决：</p><pre><code class="hljs">npm config set strict-ssl false</code></pre><h3 id="4、-es-CentOS-elasticsearch-head-npm-install"><a href="#4、-es-CentOS-elasticsearch-head-npm-install" class="headerlink" title="4、[es@CentOS elasticsearch-head]# npm install"></a>4、[es@CentOS elasticsearch-head]# npm install</h3><p>SyntaxError: Use of const in strict mode.</p><h4 id="解决办法：-3"><a href="#解决办法：-3" class="headerlink" title="解决办法："></a>解决办法：</h4><ol><li><p>Clear NPM’s cache:</p><p> sudo npm cache clean -f</p></li><li><p>Install a little helper called ‘n’</p><p> sudo npm install -g n</p></li><li><p>Install latest stable NodeJS version</p><p> sudo n stable</p></li></ol><h3 id="5、max-file-descriptors-65535-for-elasticsearch-process-is-too-low-increase-to-at-least-65536"><a href="#5、max-file-descriptors-65535-for-elasticsearch-process-is-too-low-increase-to-at-least-65536" class="headerlink" title="5、max file descriptors [65535] for elasticsearch process is too low, increase to at least [65536]"></a>5、max file descriptors [65535] for elasticsearch process is too low, increase to at least [65536]</h3><h4 id="解决办法：-4"><a href="#解决办法：-4" class="headerlink" title="解决办法："></a>解决办法：</h4><p>切换到root用户修改配置sysctl.conf</p><pre><code class="hljs">vi /etc/sysctl.conf</code></pre><p>添加下面配置：</p><pre><code class="hljs">fs.file-max=655350</code></pre><p>并执行命令：</p><pre><code class="hljs">sysctl -p</code></pre><p>然后，重新启动elasticsearch，即可启动成功。</p><h3 id="6、max-number-of-threads-1024-for-user-es-is-too-low-increase-to-at-least-4096"><a href="#6、max-number-of-threads-1024-for-user-es-is-too-low-increase-to-at-least-4096" class="headerlink" title="6、max number of threads [1024] for user [es] is too low, increase to at least [4096]"></a>6、max number of threads [1024] for user [es] is too low, increase to at least [4096]</h3><h4 id="解决办法：-5"><a href="#解决办法：-5" class="headerlink" title="解决办法："></a>解决办法：</h4><p>1、切换到root用户修改配置</p><pre><code class="hljs">vi /etc/security/limits.d/90-nproc.conf</code></pre><p>添加下面配置：</p><pre><code class="hljs">* soft nproc 4096</code></pre><p>2、修改配置</p><pre><code class="hljs">vi /etc/security/limits.conf</code></pre><p>添加下面配置：</p><pre><code class="hljs">* soft nproc 2048* hard nproc 4096</code></pre><p>并执行命令：</p><pre><code class="hljs">sysctl -p</code></pre><p>然后，重新启动elasticsearch，即可启动成功。</p><h3 id="7、Could-not-reliably-determine-the-server’s-fully-qualified-domain-name-using-10-117-235-227-for-ServerName"><a href="#7、Could-not-reliably-determine-the-server’s-fully-qualified-domain-name-using-10-117-235-227-for-ServerName" class="headerlink" title="7、Could not reliably determine the server’s fully qualified domain name, using 10.117.235.227 for ServerName"></a>7、Could not reliably determine the server’s fully qualified domain name, using 10.117.235.227 for ServerName</h3><h4 id="原因：-1"><a href="#原因：-1" class="headerlink" title="原因："></a>原因：</h4><p>此问题是在用httpd服务器做端口转发时遇到的问题。域名解析到此服务器，然后把9200端口转发到80端口，访问搜索引擎时就不用再域名后加端口了。</p><h4 id="解决办法：-6"><a href="#解决办法：-6" class="headerlink" title="解决办法："></a>解决办法：</h4><p>修改&#x2F;etc&#x2F;apache2&#x2F;httpd.conf</p><pre><code class="hljs">vi /etc/apache2/httpd.conf</code></pre><p>找到如下配置，去掉注释：</p><pre><code class="hljs">ServerName localhost:80</code></pre><p>重启httpd即可。</p><h3 id="8、system-call-filters-failed-to-install-check-the-logs-and-fix-your-configuration-or-disable-system-call-filters-at-your-own-risk"><a href="#8、system-call-filters-failed-to-install-check-the-logs-and-fix-your-configuration-or-disable-system-call-filters-at-your-own-risk" class="headerlink" title="8、system call filters failed to install; check the logs and fix your configuration or disable system call filters at your own risk"></a>8、system call filters failed to install; check the logs and fix your configuration or disable system call filters at your own risk</h3><h4 id="原因：-2"><a href="#原因：-2" class="headerlink" title="原因："></a>原因：</h4><p>CentOS6.X 不支持SecComp，而ES5.2.0默认bootstrap.system_call_filter为true进行检测，所以导致检测失败，失败后直接导致ES不能启动。</p><h4 id="解决办法：-7"><a href="#解决办法：-7" class="headerlink" title="解决办法："></a>解决办法：</h4><p>修改&#x2F;opt&#x2F;es&#x2F;elasticsearch-5.5.0&#x2F;config&#x2F;elasticsearch.yml中配置</p><pre><code class="hljs">vi /opt/es/elasticsearch-5.5.0/config/elasticsearch.yml</code></pre><p>修改如下配置：</p><pre><code class="hljs">bootstrap.memory_lock: falsebootstrap.system_call_filter: false</code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;1、error-’Cannot-allocate-memory’-errno-12&quot;&gt;&lt;a href=&quot;#1、error-’Cannot-allocate-memory’-errno-12&quot; class=&quot;headerlink&quot; title=&quot;1、error&amp;#x</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="ElasticSearch" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/ElasticSearch/"/>
+    
+    
+    <category term="ElasticSearch" scheme="https://zbcio.github.io/tags/ElasticSearch/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>URL编码/解码</title>
+    <link href="https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/Other/url-encode/"/>
+    <id>https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/Other/url-encode/</id>
+    <published>2018-04-28T00:00:00.000Z</published>
+    <updated>2026-09-04T10:00:36.817Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="一、为什么需要URL编码？"><a href="#一、为什么需要URL编码？" class="headerlink" title="一、为什么需要URL编码？"></a>一、为什么需要URL编码？</h3><p>通常如果一样东西需要编码，说明这样东西并不适合传输。原因多种多样，如Size过大，包含隐私数据，对于URL来说，之所以要进行编码，是因为URL中有些字符会引起歧义。</p><p>例如URL参数字符串中使用key&#x3D;value键值对这样的形式来传参，键值对之间以&amp;符号分隔，如&#x2F;s?q&#x3D;abc&amp;ie&#x3D;utf-8。如果你的value字符串中包含了&#x3D;或者&amp;，那么势必会造成接收URL的服务器解析错误，因此必须将引起歧义的&amp;和&#x3D;符号进行转义，也就是对其进行编码。</p><p>又如，URL的编码格式采用的是ASCII码，而不是Unicode，这也就是说你不能在URL中包含任何非ASCII字符，例如中文。否则如果客户端浏览器和服务端浏览器支持的字符集不同的情况下，中文可能会造成问题。</p><p>URL编码的原则就是使用安全的字符（没有特殊用途或者特殊意义的可打印字符）去表示那些不安全的字符。</p><h3 id="二、哪些字符需要编码？"><a href="#二、哪些字符需要编码？" class="headerlink" title="二、哪些字符需要编码？"></a>二、哪些字符需要编码？</h3><pre><code class="hljs">RFC3986文档规定，URL中只允许包含英文字母（a-zA-Z）、数字（0-9）、-_.~4个特殊字符以及所有保留字符。</code></pre><p>RFC3986文档对URL的编解码问题做出了详细的建议，指出了哪些字符需要被编码才不会引起URL语义的转变，以及对为什么这些字符需要编码做出了相应的解释。</p><h4 id="US-ASCII字符集中没有对应的可打印字符"><a href="#US-ASCII字符集中没有对应的可打印字符" class="headerlink" title="US-ASCII字符集中没有对应的可打印字符"></a>US-ASCII字符集中没有对应的可打印字符</h4><p>URL中只允许使用可打印字符。US-ASCII码中的10-7F字节全都表示控制字符，这些字符都不能直接出现在URL中。同时，对于80-FF字节（ISO-8859-1），由于已经超出了US-ACII定义的字节范围，因此也不可以放在URL中。</p><h4 id="保留字符"><a href="#保留字符" class="headerlink" title="保留字符"></a>保留字符</h4><p>URL可以划分成若干个组件，协议、主机、路径等。有一些字符（:&#x2F;?#[]@）是用作分隔不同组件的。</p><p>例如:冒号用于分隔协议和主机，&#x2F;用于分隔主机和路径，?用于分隔路径和查询参数，等等。</p><p>还有一些字符（!$&amp;’()*+,;&#x3D;）用于在每个组件中起到分隔作用的，如&#x3D;用于表示查询参数中的键值对，&amp;符号用于分隔查询多个键值对。当组件中的普通数据包含这些特殊字符时，需要对其进行编码。</p><p>RFC3986中指定了以下字符为保留字符：</p><pre><code class="hljs">!*&#39;();:@&amp;=+$,/?#[]</code></pre><h4 id="不安全字符"><a href="#不安全字符" class="headerlink" title="不安全字符"></a>不安全字符</h4><p>还有一些字符，当他们直接放在URL中的时候，可能会引起解析程序的歧义。这些字符被视为不安全字符，原因有很多。</p><table><thead><tr><th>不安全字符</th><th>不安全原因</th></tr></thead><tbody><tr><td>空格</td><td>Url在传输的过程，或者用户在排版的过程，或者文本处理程序在处理Url的过程，都有可能引入无关紧要的空格，或者将那些有意义的空格给去掉</td></tr><tr><td>引号以及&lt;&gt;</td><td>引号和尖括号通常用于在普通文本中起到分隔Url的作用</td></tr><tr><td>#</td><td>通常用于表示书签或者锚点</td></tr><tr><td>%</td><td>百分号本身用作对不安全字符进行编码时使用的特殊字符，因此本身需要编码</td></tr><tr><td>{}&#124;^[]&#96;~</td><td>某一些网关或者传输代理会篡改这些字符</td></tr></tbody></table><p>需要注意的是，对于Url中的合法字符，编码和不编码是等价的，但是对于上面提到的这些字符，如果不经过编码，那么它们有可能会造成Url语义的不同。因此对于Url而言，只有普通英文字符和数字，特殊字符$-_.+!*’()还有保留字符，才能出现在未经编码的Url之中。其他字符均需要经过编码之后才能出现在Url中。</p><p>但是由于历史原因，目前尚存在一些不标准的编码实现。例如对于<del>符号，虽然RFC3986文档规定，对于波浪符号</del>，不需要进行Url编码，但是还是有很多老的网关或者传输代理会。</p><h3 id="三、如何对Url中的非法字符进行编码"><a href="#三、如何对Url中的非法字符进行编码" class="headerlink" title="三、如何对Url中的非法字符进行编码"></a>三、如何对Url中的非法字符进行编码</h3><p>Url编码通常也被称为百分号编码（Url Encoding，also known as percent-encoding），是因为它的编码方式非常简单，使用%百分号加上两位的字符——0123456789ABCDEF——代表一个字节的十六进制形式。Url编码默认使用的字符集是US-ASCII。例如a在US-ASCII码中对应的字节是0x61，那么Url编码之后得到的就是%61，我们在地址栏上输入<a href="http://g.cn/search?q=abc">http://g.cn/search?q=%61%62%63</a><br>实际上就等同于在google上搜索abc了。又如@符号在ASCII字符集中对应的字节为0x40，经过Url编码之后得到的是%40。</p><p>常见保留字符的Url编码列表：</p><table><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>!</td><td>*</td><td>“</td><td>‘</td><td>(</td><td>)</td><td>;</td><td>:</td><td>@</td><td>&amp;</td></tr><tr><td>%21</td><td>%2A</td><td>%22</td><td>%27</td><td>%28</td><td>%29</td><td>%3B</td><td>%3A</td><td>%40</td><td>%26</td></tr><tr><td>&#x3D;</td><td>+</td><td>$</td><td>,</td><td>&#x2F;</td><td>?</td><td>%</td><td>#</td><td>[</td><td>]</td></tr><tr><td>%3D</td><td>%2B</td><td>%24</td><td>%2C</td><td>%2F</td><td>%3F</td><td>%25</td><td>%23</td><td>%5B</td><td>%5D</td></tr></tbody></table><p>对于非ASCII字符，需要使用ASCII字符集的超集进行编码得到相应的字节，然后对每个字节执行百分号编码。对于Unicode字符，RFC文档建议使用utf-8对其进行编码得到相应的字节，然后对每个字节执行百分号编码。如“中文”使用UTF-8字符集得到的字节为0xE4 0xB8 0xAD 0xE6 0x96 0x87，经过Url编码之后得到“%E4%B8%AD%E6%96%87”。</p><p>如果某个字节对应着ASCII字符集中的某个非保留字符，则此字节无需使用百分号表示。例如“Url编码”，使用UTF-8编码得到的字节是0x55 0x72 0x6C 0xE7 0xBC 0x96 0xE7 0xA0 0x81，由于前三个字节对应着ASCII中的非保留字符“Url”，因此这三个字节可以用非保留字符“Url”表示。最终的Url编码可以简化成“Url%E7%BC%96%E7%A0%81” ，当然，如果你用”%55%72%6C%E7%BC%96%E7%A0%81”也是可以的。</p><p>由于历史的原因，有一些Url编码实现并不完全遵循这样的原则，下面会提到。</p><h3 id="四、Javascript中的escape-encodeURI和encodeURIComponent的区别"><a href="#四、Javascript中的escape-encodeURI和encodeURIComponent的区别" class="headerlink" title="四、Javascript中的escape,encodeURI和encodeURIComponent的区别"></a>四、Javascript中的escape,encodeURI和encodeURIComponent的区别</h3><p>Javascript中提供了3对函数用来对Url编码以得到合法的Url，它们分别是escape &#x2F; unescape,encodeURI &#x2F; decodeURI和encodeURIComponent &#x2F; decodeURIComponent。由于解码和编码的过程是可逆的，因此这里只解释编码的过程。</p><p>这三个编码的函数——escape，encodeURI，encodeURIComponent——都是用于将不安全不合法的Url字符转换为合法的Url字符表示，它们有以下几个不同点。</p><h4 id="安全字符不同"><a href="#安全字符不同" class="headerlink" title="安全字符不同"></a>安全字符不同</h4><p>下面的表格列出了这三个函数的安全字符（即函数不会对这些字符进行编码）</p><table><thead><tr><th></th><th>安全字符</th></tr></thead><tbody><tr><td>escape（69个）</td><td>*&#x2F;@+-._0-9a-zA-Z</td></tr><tr><td>encodeURI（82个）</td><td>!#$&amp;’()*+,&#x2F;:;&#x3D;?@-._~0-9a-zA-Z</td></tr><tr><td>encodeURIComponent（71个）</td><td>!’()*-._~0-9a-zA-Z</td></tr></tbody></table><h4 id="兼容性不同"><a href="#兼容性不同" class="headerlink" title="兼容性不同"></a>兼容性不同</h4><p>escape函数是从Javascript1.0的时候就存在了，其他两个函数是在Javascript1.5才引入的。但是由于Javascript1.5已经非常普及了，所以实际上使用encodeURI和encodeURIComponent并不会有什么兼容性问题。</p><h4 id="对Unicode字符的编码方式不同"><a href="#对Unicode字符的编码方式不同" class="headerlink" title="对Unicode字符的编码方式不同"></a>对Unicode字符的编码方式不同</h4><p>这三个函数对于ASCII字符的编码方式相同，均是使用百分号+两位十六进制字符来表示。但是对于Unicode字符，escape的编码方式是%uxxxx，其中的xxxx是用来表示unicode字符的4位十六进制字符。这种方式已经被W3C废弃了。但是在ECMA-262标准中仍然保留着escape的这种编码语法。encodeURI和encodeURIComponent则使用UTF-8对非ASCII字符进行编码，然后再进行百分号编码。这是RFC推荐的。因此建议尽可能的使用这两个函数替代escape进行编码。</p><h4 id="适用场合不同"><a href="#适用场合不同" class="headerlink" title="适用场合不同"></a>适用场合不同</h4><p>encodeURI被用作对一个完整的URI进行编码，而encodeURIComponent被用作对URI的一个组件进行编码。</p><p>从上面提到的安全字符范围表格来看，我们会发现，encodeURIComponent编码的字符范围要比encodeURI的大。我们上面提到过，保留字符一般是用来分隔URI组件（一个URI可以被切割成多个组件，参考预备知识一节）或者子组件（如URI中查询参数的分隔符），如:号用于分隔scheme和主机，?号用于分隔主机和路径。由于encodeURI操纵的对象是一个完整的的URI，这些字符在URI中本来就有特殊用途，因此这些保留字符不会被encodeURI编码，否则意义就变了。</p><p>组件内部有自己的数据表示格式，但是这些数据内部不能包含有分隔组件的保留字符，否则就会导致整个URI中组件的分隔混乱。因此对于单个组件使用encodeURIComponent，需要编码的字符就更多了。</p><h3 id="五、表单提交"><a href="#五、表单提交" class="headerlink" title="五、表单提交"></a>五、表单提交</h3><p>当Html的表单被提交时，每个表单域都会被Url编码之后才在被发送。由于历史的原因，表单使用的Url编码实现并不符合最新的标准。例如对于空格使用的编码并不是%20，而是+号，如果表单使用的是Post方法提交的，我们可以在HTTP头中看到有一个Content-Type的header，值为application&#x2F;x-www-form-urlencoded。大部分应用程序均能处理这种非标准实现的Url编码，但是在客户端Javascript中，并没有一个函数能够将+号解码成空格，只能自己写转换函数。还有，对于非ASCII字符，使用的编码字符集取决于当前文档使用的字符集。例如我们在Html头部加上</p><pre><code class="hljs">&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=gb2312&quot; /&gt;</code></pre><p>这样浏览器就会使用gb2312去渲染此文档（注意，当HTML文档中没有设置此meta标签，则浏览器会根据当前用户喜好去自动选择字符集，用户也可以强制当前网站使用某个指定的字符集）。当提交表单时，Url编码使用的字符集就是gb2312。</p><h3 id="六、文档字符集会影响encodeURI吗？"><a href="#六、文档字符集会影响encodeURI吗？" class="headerlink" title="六、文档字符集会影响encodeURI吗？"></a>六、文档字符集会影响encodeURI吗？</h3><p>之前在使用Aptana（为什么专指aptana下面会提到）遇到一个很迷惑的问题，就是在使用encodeURI的时候，发现它编码得到的结果和我想的很不一样。下面是我的示例代码：</p><pre><code class="hljs">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;    &lt;head&gt;        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=gb2312&quot; /&gt;    &lt;/head&gt;    &lt;body&gt;        &lt;script type=&quot;text/javascript&quot;&gt;            document.write(encodeURI(&quot;中文&quot;));        &lt;/script&gt;    &lt;/body&gt;&lt;/html&gt; </code></pre><p>运行结果输出%E6%B6%93%EE%85%9F%E6%9E%83。显然这并不是使用UTF-8字符集进行Url编码得到的结果（在Google上搜索“中文”，Url中显示的是%E4%B8%AD%E6%96%87）。</p><p>所以我当时就很质疑，难道encodeURI还跟页面编码有关，但是我发现，正常情况下，如果你使用gb2312进行Url编码也不会得到这个结果的才是。后来终于被我发现，原来是页面文件存储使用的字符集和Meta标签中指定的字符集不一致导致的问题。Aptana的编辑器默认情况下使用UTF-8字符集。也就是说这个文件实际存储的时候使用的是UTF-8字符集。但是由于Meta标签中指定了gb2312，这个时候，浏览器就会按照gb2312去解析这个文档，那么自然在“中文”这个字符串这里就会出错，因为“中文”字符串用UTF-8编码过后得到的字节是0xE4 0xB8 0xAD 0xE6 0x96 0x87，这6个字节又被浏览器拿gb2312去解码，那么就会得到另外三个汉字“涓枃”（GBK中一个汉字占两个字节），这三个汉字在传入encodeURI函数之后得到的结果就是%E6%B6%93%EE%85%9F%E6%9E%83。因此，encodeURI使用的还是UTF-8，并不会受到页面字符集的影响。</p><h3 id="七、其他和Url编码相关的问题"><a href="#七、其他和Url编码相关的问题" class="headerlink" title="七、其他和Url编码相关的问题"></a>七、其他和Url编码相关的问题</h3><p>对于包含中文的Url的处理问题，不同浏览器有不同的表现。例如对于IE，如果你勾选了高级设置“总是以UTF-8发送Url”，那么Url中的路径部分的中文会使用UTF-8进行Url编码之后发送给服务端，而查询参数中的中文部分使用系统默认字符集进行Url编码。为了保证最大互操作性，建议所有放到Url中的组件全部显式指定某个字符集进行Url编码，而不依赖于浏览器的默认实现。</p><p>另外，很多HTTP监视工具或者浏览器地址栏等在显示Url的时候会自动将Url进行一次解码（使用UTF-8字符集），这就是为什么当你在Firefox中访问Google搜索中文的时候，地址栏显示的Url包含中文的缘故。但实际上发送给服务端的原始Url还是经过编码的。你可以在地址栏上使用Javascript访问location.href就可以看出来了。在研究Url编解码的时候千万别被这些假象给迷惑了。</p><p>参考：<a href="http://www.imkevinyang.com/2009/08/%E8%AF%A6%E8%A7%A3javascript%E4%B8%AD%E7%9A%84url%E7%BC%96%E8%A7%A3%E7%A0%81.html">详解Javascript中的Url编码&#x2F;解码</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;一、为什么需要URL编码？&quot;&gt;&lt;a href=&quot;#一、为什么需要URL编码？&quot; class=&quot;headerlink&quot; title=&quot;一、为什么需要URL编码？&quot;&gt;&lt;/a&gt;一、为什么需要URL编码？&lt;/h3&gt;&lt;p&gt;通常如果一样东西需要编码，说明这样东西并不适合传输。</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="Other" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/Other/"/>
+    
+    
+    <category term="Other" scheme="https://zbcio.github.io/tags/Other/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring Cloud常见问题</title>
+    <link href="https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/Spring-Cloud/spring-cloud-faq/"/>
+    <id>https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/Spring-Cloud/spring-cloud-faq/</id>
+    <published>2017-04-28T00:00:00.000Z</published>
+    <updated>2026-09-04T10:00:36.817Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Eureka的自我保护模式"><a href="#Eureka的自我保护模式" class="headerlink" title="Eureka的自我保护模式"></a>Eureka的自我保护模式</h3><p>如果在Eureka Server的首页看到以下这段提示，则说明Eureka已经进入了保护模式。</p><pre><code class="hljs">EMERGENCY! EUREKA MAY BE INCORRECTLY CLAIMING INSTANCES ARE UP WHEN THEY&#39;RE NOT. RENEWALS ARE LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED JUST TO BE SAFE.</code></pre><p>保护模式主要用于一组客户端和Eureka Server之间存在网络分区场景下的保护。一旦进入保护模式，Eureka Server将会尝试保护其服务注册表中的信息，不再删除服务注册表中的数据（也就是不会注销任何微服务）。</p><p>详见：<a href="https://github.com/Netflix/eureka/wiki/Understanding-Eureka-Peer-to-Peer-Communication">https://github.com/Netflix/eureka/wiki/Understanding-Eureka-Peer-to-Peer-Communication</a></p><p>参考：<a href="http://blog.csdn.net/jdhanhua/article/details/55002191">Spring Cloud中，Eureka常见问题总结</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;Eureka的自我保护模式&quot;&gt;&lt;a href=&quot;#Eureka的自我保护模式&quot; class=&quot;headerlink&quot; title=&quot;Eureka的自我保护模式&quot;&gt;&lt;/a&gt;Eureka的自我保护模式&lt;/h3&gt;&lt;p&gt;如果在Eureka Server的首页看到以下这段提</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="Spring Cloud" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/Spring-Cloud/"/>
+    
+    
+    <category term="Spring Cloud" scheme="https://zbcio.github.io/tags/Spring-Cloud/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>树莓派无显示器安装步骤</title>
+    <link href="https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/RaspberryPi/raspberry-pi-noscreen-install/"/>
+    <id>https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/RaspberryPi/raspberry-pi-noscreen-install/</id>
+    <published>2017-03-09T00:00:00.000Z</published>
+    <updated>2026-09-04T10:00:36.817Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>1、树莓派<br>2、SD卡（8G+）<br>3、Android通用充电器（5V2A）<br>4、路由器<br>5、网线一根<br>6、电脑一台</p><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>下载官方提供的Raspberry Pi专用Debian——Raspbian，将下载后的.zip文件解压，得到一个.img文件。打开Win32DiskImager，选择.img文件和SD卡，点击Write按钮开始安装系统到SD卡上。</p><span id="more"></span><h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><p>安装完成后，把SD卡插到树莓派的卡槽上，接上电源，网线（连接路由器），树莓派会自动启动。</p><h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><p>登录路由器的管理页面（通常为192.168.1.1），找到叫做Raspberrypi的设备的IP，这便是树莓派的局域网IP。</p><p>打开SSH工具，连接树莓派的局域网IP，端口22，默认用户名：pi，密码：raspberry</p><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>登录SSH后，需要配置一下，输入：sudo raspi-config，选择Expand Filesystem，这步是为了把整个系统的可用空间扩展到SD卡的大小。</p><p>选择Finish，然后重启并生效。</p><h3 id="安装远程桌面"><a href="#安装远程桌面" class="headerlink" title="安装远程桌面"></a>安装远程桌面</h3><p>远程桌面控制需要安装vncserver，执行命令：sudo apt-get install tightvncserver。</p><p>安装完成后可以使用vncpasswd命令来设置密码，然后询问是否设置一个view-only密码，根据自己需要决定是否要设置。</p><p>第一次启动图形界面的服务时也会提示进行设置。</p><p>启动图形界面的命令：</p><p>  vncserver :1 -geometry 800x600</p><p>命令中的:1表示的是1号桌面，我们也可以输入:2创建2号桌面。然后-geometry 800x600当然就是设置分辨率。</p><p>可以使用vncserver -kill :1这个命令来杀死1号桌面。</p><p>然后就可以使用VNC连接远程桌面了。</p><h3 id="连接远程桌面"><a href="#连接远程桌面" class="headerlink" title="连接远程桌面"></a>连接远程桌面</h3><p>下载VNC，安装并打开。</p><p>输入树莓派的IP以及桌面的号码（例如：192.168.1.22:1），点connect后输入密码即可登录。</p><h3 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h3><p><a href="http://www.eeboard.com/bbs/thread-27029-1-1.html">http://www.eeboard.com/bbs/thread-27029-1-1.html</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;准备&quot;&gt;&lt;a href=&quot;#准备&quot; class=&quot;headerlink&quot; title=&quot;准备&quot;&gt;&lt;/a&gt;准备&lt;/h3&gt;&lt;p&gt;1、树莓派&lt;br&gt;2、SD卡（8G+）&lt;br&gt;3、Android通用充电器（5V2A）&lt;br&gt;4、路由器&lt;br&gt;5、网线一根&lt;br&gt;6、电脑一台&lt;/p&gt;
+&lt;h3 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h3&gt;&lt;p&gt;下载官方提供的Raspberry Pi专用Debian——Raspbian，将下载后的.zip文件解压，得到一个.img文件。打开Win32DiskImager，选择.img文件和SD卡，点击Write按钮开始安装系统到SD卡上。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="RaspberryPi" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/RaspberryPi/"/>
+    
+    
+    <category term="树莓派" scheme="https://zbcio.github.io/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>树莓派启用root账户</title>
+    <link href="https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/RaspberryPi/raspberry-pi-root/"/>
+    <id>https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/RaspberryPi/raspberry-pi-root/</id>
+    <published>2017-03-09T00:00:00.000Z</published>
+    <updated>2026-09-04T10:00:36.817Z</updated>
+    
+    <content type="html"><![CDATA[<p>树莓派使用的linux是debian系统，所以树莓派启用root和debian是相同的。</p><p>debian里root账户默认没有密码，但账户锁定。</p><p>当需要root权限时，由默认账户经由sudo执行，Raspberry pi系统中的Raspbian默认用户是pi 密码为raspberry</p><span id="more"></span><p>重新开启root账号，可由pi用户登录后，在命令行下执行</p><p>  sudo passwd root</p><p>执行此命令后系统会提示输入两遍的root密码，输入你想设的密码即可，然后在执行</p><p>  sudo passwd –unlock root</p><p>这样就可以解锁root账户了。</p><p>参考：<a href="http://outofmemory.cn/code-snippet/2897/shumeipai">http://outofmemory.cn/code-snippet/2897/shumeipai</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;树莓派使用的linux是debian系统，所以树莓派启用root和debian是相同的。&lt;/p&gt;
+&lt;p&gt;debian里root账户默认没有密码，但账户锁定。&lt;/p&gt;
+&lt;p&gt;当需要root权限时，由默认账户经由sudo执行，Raspberry pi系统中的Raspbian默认用户是pi 密码为raspberry&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="RaspberryPi" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/RaspberryPi/"/>
+    
+    
+    <category term="树莓派" scheme="https://zbcio.github.io/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring事务类型</title>
+    <link href="https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/Spring/spring-transaction/"/>
+    <id>https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/Spring/spring-transaction/</id>
+    <published>2017-02-16T00:00:00.000Z</published>
+    <updated>2026-09-04T10:00:36.817Z</updated>
+    
+    <content type="html"><![CDATA[<p>PROPAGATION_REQUIRED–支持当前事务，如果当前没有事务，就新建一个事务。这是最常见的选择。</p><p>PROPAGATION_SUPPORTS–支持当前事务，如果当前没有事务，就以非事务方式执行。</p><p>PROPAGATION_MANDATORY–支持当前事务，如果当前没有事务，就抛出异常。</p><p>PROPAGATION_REQUIRES_NEW–新建事务，如果当前存在事务，把当前事务挂起。</p><p>PROPAGATION_NOT_SUPPORTED–以非事务方式执行操作，如果当前存在事务，就把当前事务挂起。</p><p>PROPAGATION_NEVER–以非事务方式执行，如果当前存在事务，则抛出异常。</p><p>PROPAGATION_NESTED–如果当前存在事务，则在嵌套事务内执行。如果当前没有事务，则进行与PROPAGATION_REQUIRED类似的操作。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;PROPAGATION_REQUIRED–支持当前事务，如果当前没有事务，就新建一个事务。这是最常见的选择。&lt;/p&gt;
+&lt;p&gt;PROPAGATION_SUPPORTS–支持当前事务，如果当前没有事务，就以非事务方式执行。&lt;/p&gt;
+&lt;p&gt;PROPAGATION_MANDATOR</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="Spring" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/Spring/"/>
+    
+    
+    <category term="Spring" scheme="https://zbcio.github.io/tags/Spring/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL连接数</title>
+    <link href="https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/MySQL/mysql-connections/"/>
+    <id>https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/MySQL/mysql-connections/</id>
+    <published>2016-10-17T00:00:00.000Z</published>
+    <updated>2026-09-04T10:00:36.817Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="1、设置最大连接数："><a href="#1、设置最大连接数：" class="headerlink" title="1、设置最大连接数："></a>1、设置最大连接数：</h4><h5 id="方法一、使用mysql命令："><a href="#方法一、使用mysql命令：" class="headerlink" title="方法一、使用mysql命令："></a>方法一、使用mysql命令：</h5><pre><code class="hljs">查看最大连接数：show variables like &#39;max_connections&#39;;查看响应的最大连接数：show global status like &#39;Max_used_connections&#39;;设置最大连接数：set GLOBAL max_connections=连接数;</code></pre><h5 id="方法二、修改-etc-my-cnf中的max-connections"><a href="#方法二、修改-etc-my-cnf中的max-connections" class="headerlink" title="方法二、修改&#x2F;etc&#x2F;my.cnf中的max_connections"></a>方法二、修改&#x2F;etc&#x2F;my.cnf中的max_connections</h5><h4 id="2、show-status："><a href="#2、show-status：" class="headerlink" title="2、show status："></a>2、show status：</h4><pre><code class="hljs">Threads_connected  当前的连接数Connections  试图连接到(不管是否成功)MySQL服务器的连接数。Max_used_connections  服务器启动后已经同时使用的连接的最大数量。</code></pre><h4 id="3、显示当前mysql状态："><a href="#3、显示当前mysql状态：" class="headerlink" title="3、显示当前mysql状态："></a>3、显示当前mysql状态：</h4><pre><code class="hljs">mysql&gt; status                                                                                                                                                                               --------------                                                                                                                                                                              mysql  Ver 14.14 Distrib 5.6.33, for linux-glibc2.5 (x86_64) using  EditLine wrapper                                                                                                        Connection id:          1107720                                                                                                                                                             Current database:                                                                                                                                                                           Current user:           root@localhost                                                                                                                                                      SSL:                    Not in use                                                                                                                                                          Current pager:          stdout                                                                                                                                                              Using outfile:          &#39;&#39;                                                                                                                                                                  Using delimiter:        ;                                                                                                                                                                   Server version:         5.6.33 MySQL Community Server (GPL)                                                                                                                                 Protocol version:       10                                                                                                                                                                  Connection:             Localhost via UNIX socket                                                                                                                                           Server characterset:    latin1                                                                                                                                                              Db     characterset:    latin1                                                                                                                                                              Client characterset:    utf8                                                                                                                                                                Conn.  characterset:    utf8                                                                                                                                                                UNIX socket:            /tmp/mysql.sock                                                                                                                                                     Uptime:                 7 days 3 hours 58 min 4 sec                                                                                                                                         Threads: 28  Questions: 8621582  Slow queries: 0  Opens: 73  Flush tables: 1  Open tables: 66  Queries per second avg: 13.926                                                               --------------  </code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h4 id=&quot;1、设置最大连接数：&quot;&gt;&lt;a href=&quot;#1、设置最大连接数：&quot; class=&quot;headerlink&quot; title=&quot;1、设置最大连接数：&quot;&gt;&lt;/a&gt;1、设置最大连接数：&lt;/h4&gt;&lt;h5 id=&quot;方法一、使用mysql命令：&quot;&gt;&lt;a href=&quot;#方法一、使用m</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="MySQL" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/MySQL/"/>
+    
+    
+    <category term="MySQL" scheme="https://zbcio.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于Java空格的那些事</title>
+    <link href="https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/Java/java-white-space/"/>
+    <id>https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/Java/java-white-space/</id>
+    <published>2016-09-20T00:00:00.000Z</published>
+    <updated>2026-09-04T10:00:36.817Z</updated>
+    
+    <content type="html"><![CDATA[<p>摘要—使用Character.isWhitespace(char ch)来判断任意编码的空格字符。  </p><p>最近公司要求前台输入框要校验中文空格，无意间发现StringUtils.isNotBlank(String str)这个方法校验时会校验到中文空格，用起来很方便。  </p><p>出于好奇，就看了看源码，发现有这么一段：  </p><pre><code class="hljs">if (Character.isWhitespace(str.charAt(i)) == false)</code></pre><p>于是打开Java API文档，看看Character.isWhitespace(char ch)这个方法的说明。  </p><p>果然找到了如下这么一段：  </p><pre><code class="hljs">public static boolean isWhitespace(char ch)Determines if the specified character is white space according to Java. A character is a Java whitespace character if and only if it satisfies one of the following criteria:It is a Unicode space character (SPACE_SEPARATOR, LINE_SEPARATOR, or PARAGRAPH_SEPARATOR) but is not also a non-breaking space (&#39;\u00A0&#39;, &#39;\u2007&#39;, &#39;\u202F&#39;).It is &#39;\t&#39;, U+0009 HORIZONTAL TABULATION.It is &#39;\n&#39;, U+000A LINE FEED.It is &#39;\u000B&#39;, U+000B VERTICAL TABULATION.It is &#39;\f&#39;, U+000C FORM FEED.It is &#39;\r&#39;, U+000D CARRIAGE RETURN.It is &#39;\u001C&#39;, U+001C FILE SEPARATOR.It is &#39;\u001D&#39;, U+001D GROUP SEPARATOR.It is &#39;\u001E&#39;, U+001E RECORD SEPARATOR.It is &#39;\u001F&#39;, U+001F UNIT SEPARATOR.Note: This method cannot handle supplementary characters. To support all Unicode characters, including supplementary characters, use the isWhitespace(int) method.Parameters:ch - the character to be tested.Returns:true if the character is a Java whitespace character; false otherwise.Since:1.1See Also:isSpaceChar(char)</code></pre><p>也就是说，只要是空格，不管是什么编码的，这个方法都可以进行判断。  </p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;摘要—使用Character.isWhitespace(char ch)来判断任意编码的空格字符。  &lt;/p&gt;
+&lt;p&gt;最近公司要求前台输入框要校验中文空格，无意间发现StringUtils.isNotBlank(String str)这个方法校验时会校验到中文空格，用起来很</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="Java" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/Java/"/>
+    
+    
+    <category term="Java" scheme="https://zbcio.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>简单的Spring定时任务</title>
+    <link href="https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/Spring/spring-timed-task/"/>
+    <id>https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/Spring/spring-timed-task/</id>
+    <published>2016-09-10T00:00:00.000Z</published>
+    <updated>2026-09-04T10:00:36.817Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="web-xml"><a href="#web-xml" class="headerlink" title="web.xml"></a>web.xml</h5><pre><code class="hljs">&lt;context-param&gt;    &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;    &lt;param-value&gt;classpath*:applicationContext.xml&lt;/param-value&gt;&lt;/context-param&gt;&lt;listener&gt;    &lt;description&gt;Spring Context&lt;/description&gt;    &lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;&lt;/listener&gt;</code></pre><h5 id="applicationContext-xml"><a href="#applicationContext-xml" class="headerlink" title="applicationContext.xml"></a>applicationContext.xml</h5><pre><code class="hljs">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;    xmlns:context=&quot;http://www.springframework.org/schema/context&quot; xmlns:task=&quot;http://www.springframework.org/schema/task&quot;    xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans.xsd        http://www.springframework.org/schema/context        http://www.springframework.org/schema/context/spring-context.xsd        http://www.springframework.org/schema/task        http://www.springframework.org/schema/task/spring-task.xsd&quot;&gt;    &lt;!-- 指定Spring扫描组件的路径 --&gt;    &lt;context:component-scan base-package=&quot;io.zbc.＊&quot; /&gt;    &lt;!-- 使Spring能够识别@Scheduled --&gt;    &lt;task:annotation-driven scheduler=&quot;myScheduled&quot; /&gt;    &lt;!-- 根据情况选择是否需要配置线程池 --&gt;    &lt;task:scheduler id=&quot;myScheduled&quot; pool-size=&quot;10&quot; /&gt;&lt;/beans&gt;</code></pre><h5 id="TestTimedTask-java"><a href="#TestTimedTask-java" class="headerlink" title="TestTimedTask.java"></a>TestTimedTask.java</h5><pre><code class="hljs">import org.springframework.scheduling.annotation.Scheduled;import org.springframework.stereotype.Component;@Componentpublic class TestTimedTask &#123;    // 周一至周五，9:00到17:00之间，每5分钟执行一次    @Scheduled(cron = &quot;0 0/5 9-17 * * MON-FRI&quot;)    public void testTimedTask() &#123;        System.out.println(&quot;任务执行...&quot;);    &#125;&#125;</code></pre><h5 id="cronExpression表达式"><a href="#cronExpression表达式" class="headerlink" title="cronExpression表达式"></a>cronExpression表达式</h5><table><thead><tr><th>字段</th><th>允许值</th><th>允许的特殊字符</th></tr></thead><tbody><tr><td>秒</td><td>0-59</td><td>, - * &#x2F;</td></tr><tr><td>分</td><td>0-59</td><td>, - * &#x2F;</td></tr><tr><td>小时</td><td>0-23</td><td>, - * &#x2F;</td></tr><tr><td>日期</td><td>1-31</td><td>, - * &#x2F; L W C</td></tr><tr><td>月份</td><td>1-12 或者 JAN-DEC</td><td>, - * &#x2F;</td></tr><tr><td>星期</td><td>1-7 或者 SUN-SAT</td><td>, - * &#x2F; L C #</td></tr><tr><td>年（可选）</td><td>留空, 1970-2099</td><td>, - * &#x2F;</td></tr></tbody></table><h5 id="特殊字符解释："><a href="#特殊字符解释：" class="headerlink" title="特殊字符解释："></a>特殊字符解释：</h5><p>“,” 字符被用来指定另外的值。如：“MON,WED,FRI”在星期域里表示”星期一、星期三、星期五”。  </p><p>“-” 字符被用来指定一个范围。如：“10-12”在小时域意味着“10点、11点、12点”。  </p><p>“*” 字符被用来指定所有的值。如：”*“在分钟的字段域里表示“每分钟”。  </p><p>“?” 字符只在日期域和星期域中使用。它被用来指定“非明确的值”。当你需要通过在这两个域中的一个来指定一些东西的时候，它是有用的。看下面的例子你就会明白。  </p><p>“&#x2F;” 字符指定在某个域上周期性触发，该符号将其所在域中的表达式分为两个部分，其中第一部分是起始值，除了秒以外都会降低一个单位，比如在“秒”上定义“5&#x2F;10”表示从第5秒开始每10秒执行一次，而在“分”上则表示从第5秒开始每10分钟执行一次。</p><p>“L” 字符指定在月或者星期中的某天（最后一天）。即“Last ”的缩写。但是在星期和月中“L”表示不同的意思。如：<br>在月子段中“L”指月份的最后一天-1月31日，2月28日；<br>在星期字段中则简单的表示为“7”或者“SAT”；<br>在星期字段中在某个value值得后面，则表示“某月的最后一个星期value”,如“6L”表示某月的最后一个星期五。  </p><p>“W” 字符只能用在月份字段中，该字段指定了离指定日期最近的那个星期日。  </p><p>“#” 字符只能用在星期字段，该字段指定了第几个星期value在某月中。  </p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h5 id=&quot;web-xml&quot;&gt;&lt;a href=&quot;#web-xml&quot; class=&quot;headerlink&quot; title=&quot;web.xml&quot;&gt;&lt;/a&gt;web.xml&lt;/h5&gt;&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;&amp;lt;context-param&amp;gt;
+    &amp;lt</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="Spring" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/Spring/"/>
+    
+    
+    <category term="Spring" scheme="https://zbcio.github.io/tags/Spring/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>virtualenv和virtualenvwrapper虚拟运行环境的使用</title>
+    <link href="https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/Python/virtualenv-virtualenvwrapper/"/>
+    <id>https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/Python/virtualenv-virtualenvwrapper/</id>
+    <published>2016-01-28T00:00:00.000Z</published>
+    <updated>2026-09-04T10:00:36.817Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1、virtualenv"><a href="#1、virtualenv" class="headerlink" title="1、virtualenv"></a>1、virtualenv</h3><p>安装virtualenv</p><pre><code class="hljs">$ pip install virtualenv</code></pre><p>安装完成后，使用帮助命令查看一下。</p><pre><code class="hljs">$ virtualenv --help </code></pre><p>使用virtualenv建立虚拟运行环境</p><pre><code class="hljs">$ export VIRTUALENV_USE_DISTRIBUTE=TRUE$ mkdir ~/work$ cd ~/work$ virtualenv env</code></pre><p>上述命令执行后，会在work目录下建立一个新的env目录，这就是虚拟环境目录。<br>VIRTUALENV_USE_DISTRIBUTE是向Distribute明示Python运行信息的环境变量。如果在开发过程中，希望所开发的Python应用程序有“不兼容旧版本的Python”或者“兼容最新版本Python”的要求，最好对该环境变量进行设定。为了不在每次登录都输入这样的命令，我们可以在登录的shell配置中加入下面这条语句。</p><pre><code class="hljs">$ export VIRTUALENV_USE_DISTRIBUTE=TRUE</code></pre><p>Distribute会根据这个环境变量是否存在，判断虚拟运行环境的配置有效或无效。因此在不使用Distribute的时候，建议用unset命令取消该环境变量。<br>接下来，激活虚拟运行环境。</p><pre><code class="hljs">$ source env/bin/activate</code></pre><p>当使用了source命令后，虚拟运行环境信息开始生效。我们可以通过查看命令行终端开头是否出现了（env）这样的标志，来判断虚拟运行环境是否彻底被激活。如：</p><pre><code class="hljs">(env)ubuntu:~/work$ </code></pre><p>检查安装好的包版本信息</p><pre><code class="hljs">(env) $ pip freezedistribute==0.6.24wsgiref==0.1.2</code></pre><p>可见，我们已经建立了一个安装最少数量包的Python虚拟运行环境。在这样的环境下，我们再一次使用pip install命令安装开发应用程序需要的包或者模块。如此以来，我们就可以很容易地把我在开发Python应用程序是需要安装的包和模块，从而尽可能减少其它不相干包或者模块给应用程序开发带来的位置影响。<br>如果需要推出当前的虚拟运行环境，可以使用下面的命令。</p><pre><code class="hljs">(env) $ deactivate</code></pre><p>当不需要该虚拟环境时（这里就是指名为env的虚拟环境），可以直接使用rm等命令将对应的目录删除。</p><h3 id="2、virtualenvwrapper"><a href="#2、virtualenvwrapper" class="headerlink" title="2、virtualenvwrapper"></a>2、virtualenvwrapper</h3><p>接着我们介绍一种比virtualenv更容易使用的工具——virtualenvwrapper。virtualenv需要每次使用source命令导入虚拟运行环境信息，这一点非常麻烦，另外开发者还有可能忘记虚拟环境目录的建立位置。virtualenvwrapper这一命令行工具就是通过对virtualenv进行二次封装，解决了上述种种问题。  </p><h4 id="安装virtualenvwrapper"><a href="#安装virtualenvwrapper" class="headerlink" title="安装virtualenvwrapper"></a>安装virtualenvwrapper</h4><pre><code class="hljs">$ pip install virtualenvwrapper</code></pre><p>安装完成后，会在下面的位置生成virtualenvwrapper的shell脚本。<br>&#x2F;usr&#x2F;local&#x2F;bin&#x2F;virtualenvwrapper.sh<br>在使用virtualenvwrapper时，需要配置登录的shell初始化脚本，将virtualenvwrapper.sh的信息读入当前的shell环境。这里一bash为例，通过对用户目录下的.bashrc配置文件进行如下修改即可。</p><pre><code class="hljs">if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then    export WORKON_HOME=$HOME/.virtualenvs    source /usr/local/bin/virtualenvwrapper.shfi</code></pre><p>准备工作到此结束。由于.bashrc是在登录时执行的，因此如果登出了虚拟机上客户端操作系统，再一次登录之后，运行下面的命令同样可以使用virtualenvwrapper命令。<br>再次读入.bashrc  </p><pre><code class="hljs">source ~/.bashrc</code></pre><p>我们可以输入命令mkvirtualenv，看一下起是否可用。</p><pre><code class="hljs">$ mkvirtualenv --help</code></pre><h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>下面让我们一起看一下该工具的使用。和virtualenv一样，首先需要创建一个虚拟的运行环境。</p><pre><code class="hljs">$ mkvirtualenv newenv</code></pre><p>当输入上面命令后，也就和virtualenv一样，建立了一个虚拟的运行环境，而且一开始就处于激活的状态，但我们没有见到newenv目录。<br>其实virtualenvwrapper对虚拟运行环境做了统一管理，根据上面配置的环境变量WORKON_HOME的路径信息，在其中建立了虚拟运行环境目录。在前面我们将WORKON_HOME设定为$HOME&#x2F;.virtualenvs，让我们用下面的命令对这一目录进行确认，看一下是否有newenv目录生成。</p><pre><code class="hljs">$ ls -la $HOME/.virtualenvs</code></pre><p>退出虚拟运行环境对命令同样是deactivate，进入虚拟运行环境对命令变为workon。<br>进入虚拟运行环境：</p><pre><code class="hljs">$ workon newenv</code></pre><p>当我们想浏览所有既存对虚拟运行环境却忘记了他们的名称时，可以不加任何选项，蛋蛋输入workon命令即可。虽然该工具包提供了lsvirtualenv这一专门浏览既存虚拟运行环境的命令，但如果仅仅是浏览环境，不如直接使用workon来的方便。<br>通过mkvirtualenv建立的虚拟运行环境可用下面的命令删除。</p><pre><code class="hljs">$ rmvirtualenv newenv</code></pre><p>声明：以上内容整理自《Python开发实战》。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;1、virtualenv&quot;&gt;&lt;a href=&quot;#1、virtualenv&quot; class=&quot;headerlink&quot; title=&quot;1、virtualenv&quot;&gt;&lt;/a&gt;1、virtualenv&lt;/h3&gt;&lt;p&gt;安装virtualenv&lt;/p&gt;
+&lt;pre&gt;&lt;code cl</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="Python" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/Python/"/>
+    
+    
+    <category term="Python" scheme="https://zbcio.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Nginx反向代理Tomcat</title>
+    <link href="https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/Tomcat/nginx-tomcat-proxy_pass/"/>
+    <id>https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/Tomcat/nginx-tomcat-proxy_pass/</id>
+    <published>2016-01-03T00:00:00.000Z</published>
+    <updated>2026-09-04T10:00:36.817Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1、配置Tomcat"><a href="#1、配置Tomcat" class="headerlink" title="1、配置Tomcat"></a>1、配置Tomcat</h3><p>假设要通过Nginx来访问Tomgcat下的test项目，先把Tomcat配置成默认访问test，这样我们访问 <code>http://localhost:8080</code> 时，就可以直接访问test了<br>参考：<a href="/cn/%E6%8A%80%E6%9C%AF/Tomcat/tomcat-path/">Tomcat项目路径配置</a>  </p><h3 id="2、配置Nginx"><a href="#2、配置Nginx" class="headerlink" title="2、配置Nginx"></a>2、配置Nginx</h3><p>编辑nginx下的nginx.conf文件<br>在http中配置upstream，用来配置要转发的URL  </p><pre><code class="hljs">    upstream tomcat&#123;            server 127.0.0.1:8080;    &#125;</code></pre><p>在server中配置server_name和location  </p><pre><code class="hljs">    server_name localhost;    location / &#123;            #指向配置的upstream            proxy_pass http://tomcat;    &#125;    location ~ \.(jsp|do)$ &#123;            #处理jsp文件和.do的请求            proxy_pass http://tomcat;    &#125;    location ~ \.(html|js|css|gif|jpg|jpeg|png|bmp|ico))$ &#123;            #处理静态文件            root /srv/apache-tomcat-8.0.26/webapps/test/;            #设置过期时间            expires 12h;    &#125;</code></pre><p>这时就可以用localhost来直接访问test了。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;1、配置Tomcat&quot;&gt;&lt;a href=&quot;#1、配置Tomcat&quot; class=&quot;headerlink&quot; title=&quot;1、配置Tomcat&quot;&gt;&lt;/a&gt;1、配置Tomcat&lt;/h3&gt;&lt;p&gt;假设要通过Nginx来访问Tomgcat下的test项目，先把Tomcat配</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="Tomcat" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/Tomcat/"/>
+    
+    
+    <category term="Tomcat" scheme="https://zbcio.github.io/tags/Tomcat/"/>
+    
+    <category term="Nginx" scheme="https://zbcio.github.io/tags/Nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>批量将文件名中的大写字母替换为小写</title>
+    <link href="https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/Python/python-file-to-lower/"/>
+    <id>https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/Python/python-file-to-lower/</id>
+    <published>2015-12-14T00:00:00.000Z</published>
+    <updated>2026-09-04T10:00:36.817Z</updated>
+    
+    <content type="html"><![CDATA[<p>场景：<br>个人文件夹里有一些文件的文件名全为大写的，十分不便于阅读，就想有什么办法能把他们全部变成小写的呢？<br>刚好最近在学习Python，就用Python来完成这件事吧！<br>代码如下：  </p><pre><code class="hljs">#批量将文件名全部转换为小写，可修改path来自定义文件目录import osdef rename_file():    path = &quot;D:/&quot;    file_list = os.listdir(path)    for file_name in file_list:        file_name_old = path + file_name        file_name_new = path + file_name.lower()        os.rename(file_name_old, file_name_new)</code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;场景：&lt;br&gt;个人文件夹里有一些文件的文件名全为大写的，十分不便于阅读，就想有什么办法能把他们全部变成小写的呢？&lt;br&gt;刚好最近在学习Python，就用Python来完成这件事吧！&lt;br&gt;代码如下：  &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;#批量将文件名</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="Python" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/Python/"/>
+    
+    
+    <category term="Python" scheme="https://zbcio.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Xms Xmx PermSize MaxPermSize 区别</title>
+    <link href="https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/Eclipse/permsize-maxpermsize/"/>
+    <id>https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/Eclipse/permsize-maxpermsize/</id>
+    <published>2015-10-09T00:00:00.000Z</published>
+    <updated>2026-09-04T10:00:36.817Z</updated>
+    
+    <content type="html"><![CDATA[<p>Eclipse崩溃，错误提示：<br>MyEclipse has detected that less than 5% of the 64MB of Perm<br>Gen (Non-heap memory) space remains. It is strongly recommended<br>that you exit and restart MyEclipse with new virtual machine memory<br>paramters to increase this memory.   Failure to do so can result in<br>data loss. The recommended Eclipse memory parameters are:<br>eclipse.exe -vmargs -Xms128M -Xmx512M -XX:PermSize&#x3D;64M -XX:MaxPermSize&#x3D;128M</p><h3 id="1-参数的含义"><a href="#1-参数的含义" class="headerlink" title="1.参数的含义"></a>1.参数的含义</h3><p>-vmargs -Xms128M -Xmx512M -XX:PermSize&#x3D;64M -XX:MaxPermSize&#x3D;128M<br>-vmargs 说明后面是VM的参数，所以后面的其实都是JVM的参数了<br>-Xms128m JVM初始分配的堆内存<br>-Xmx512m JVM最大允许分配的堆内存，按需分配<br>-XX:PermSize&#x3D;64M JVM初始分配的非堆内存<br>-XX:MaxPermSize&#x3D;128M JVM最大允许分配的非堆内存，按需分配</p><p>我们首先了解一下JVM内存管理的机制，然后再解释每个参数代表的含义。</p><h4 id="1-堆-Heap-和非堆-Non-heap-内存"><a href="#1-堆-Heap-和非堆-Non-heap-内存" class="headerlink" title="1)堆(Heap)和非堆(Non-heap)内存"></a>1)堆(Heap)和非堆(Non-heap)内存</h4><p> 按照官方的说法：“Java 虚拟机具有一个堆，堆是运行时数据区域，所有类实例和数组的内存均从此处分配。堆是在 Java 虚拟机启动时创建的。”“在JVM中堆之外的内存称为非堆内存(Non-heap memory)”。<br> 可以看出JVM主要管理两种类型的内存：堆和非堆。简单来说堆就是Java代码可及的内存，是留给开发人员使用的；非堆就是JVM留给自己用的，<br> 所以方法区、JVM内部处理或优化所需的内存(如JIT编译后的代码缓存)、每个类结构(如运行时常数池、字段和方法数据)以及方法和构造方法的代码都在非堆内存中。 </p><p>堆内存分配  </p><p> JVM初始分配的堆内存由-Xms指定，默认是物理内存的1&#x2F;64；JVM最大分配的堆内存由-Xmx指定，默认是物理内存的1&#x2F;4。默认空余堆内存小于40%时，JVM就会增大堆直到-Xmx的最大限制；<br> 空余堆内存大于70%时，JVM会减少堆直到-Xms的最小限制。因此服务器一般设置-Xms、-Xmx 相等以避免在每次GC 后调整堆的大小。<br> 说明：如果-Xmx 不指定或者指定偏小，应用可能会导致java.lang.OutOfMemory错误，此错误来自JVM，不是Throwable的，无法用try…catch捕捉。 </p><p>非堆内存分配  </p><p> JVM使用-XX:PermSize设置非堆内存初始值，默认是物理内存的1&#x2F;64；由XX:MaxPermSize设置最大非堆内存的大小，默认是物理内存的1&#x2F;4。（还有一说：MaxPermSize缺省值和-server -client选项相关，<br> -server选项下默认MaxPermSize为64m，-client选项下默认MaxPermSize为32m。这个我没有实验。）<br> 上面错误信息中的PermGen space的全称是Permanent Generation space，是指内存的永久保存区域。还没有弄明白PermGen space是属于非堆内存，还是就是非堆内存，但至少是属于了。<br>XX:MaxPermSize设置过小会导致java.lang.OutOfMemoryError: PermGen space 就是内存益出。<br>说说为什么会内存益出：<br>（1）这一部分内存用于存放Class和Meta的信息，Class在被 Load的时候被放入PermGen space区域，它和存放Instance的Heap区域不同。<br>（2）GC(Garbage Collection)不会在主程序运行期对PermGen space进行清理，所以如果你的APP会LOAD很多CLASS 的话,就很可能出现PermGen space错误。<br>  这种错误常见在web服务器对JSP进行pre compile的时候。  </p><h4 id="2-JVM内存限制-最大值"><a href="#2-JVM内存限制-最大值" class="headerlink" title="2)JVM内存限制(最大值)"></a>2)JVM内存限制(最大值)</h4><p> 首先JVM内存限制于实际的最大物理内存，假设物理内存无限大的话，JVM内存的最大值跟操作系统有很大的关系。简单的说就32位处理器虽然可控内存空间有4GB,但是具体的操作系统会给一个限制，<br> 这个限制一般是2GB-3GB（一般来说Windows系统下为1.5G-2G，Linux系统下为2G-3G），而64bit以上的处理器就不会有限制了。  </p><h3 id="2-为什么有的机器我将-Xmx和-XX-MaxPermSize都设置为512M之后Eclipse可以启动，而有些机器无法启动？"><a href="#2-为什么有的机器我将-Xmx和-XX-MaxPermSize都设置为512M之后Eclipse可以启动，而有些机器无法启动？" class="headerlink" title="2. 为什么有的机器我将-Xmx和-XX:MaxPermSize都设置为512M之后Eclipse可以启动，而有些机器无法启动？"></a>2. 为什么有的机器我将-Xmx和-XX:MaxPermSize都设置为512M之后Eclipse可以启动，而有些机器无法启动？</h3><p> 通过上面对JVM内存管理的介绍我们已经了解到JVM内存包含两种：堆内存和非堆内存，另外JVM最大内存首先取决于实际的物理内存和操作系统。所以说设置VM参数导致程序无法启动主要有以下几种原因：  </p><ol><li>参数中-Xms的值大于-Xmx，或者-XX:PermSize的值大于-XX:MaxPermSize；  </li><li>-Xmx的值和-XX:MaxPermSize的总和超过了JVM内存的最大限制，比如当前操作系统最大内存限制，或者实际的物理内存等等。说到实际物理内存这里需要说明一点的是，<br> 如果你的内存是1024MB，但实际系统中用到的并不可能是1024MB，因为有一部分被硬件占用了。</li></ol><h3 id="3-为何将上面的参数写入到eclipse-ini文件Eclipse没有执行对应的设置？"><a href="#3-为何将上面的参数写入到eclipse-ini文件Eclipse没有执行对应的设置？" class="headerlink" title="3. 为何将上面的参数写入到eclipse.ini文件Eclipse没有执行对应的设置？"></a>3. 为何将上面的参数写入到eclipse.ini文件Eclipse没有执行对应的设置？</h3><p> 那为什么同样的参数在快捷方式或者命令行中有效而在eclipse.ini文件中是无效的呢？这是因为我们没有遵守eclipse.ini文件的设置规则：<br>参数形如“项 值”这种形式，中间有空格的需要换行书写，如果值中有空格的需要用双引号包括起来。比如我们使用-vm C:&#x2F;Java&#x2F;jre1.6.0&#x2F;bin&#x2F;javaw.exe参数设置虚拟机，<br>在eclipse.ini文件中要写成这样：  </p><pre><code class="hljs">-vm C:/Java/jre1.6.0/bin/javaw.exe -vmargs -Xms128M -Xmx512M -XX:PermSize=64M -XX:MaxPermSize=128M </code></pre><p>实际运行的结果可以通过Eclipse中“Help”-“About Eclipse SDK”窗口里面的“Configuration Details”按钮进行查看。<br>另外需要说明的是，Eclipse压缩包中自带的eclipse.ini文件内容是这样的：  </p><pre><code class="hljs">-showsplash org.eclipse.platform --launcher.XXMaxPermSize 256m -vmargs -Xms40m -Xmx256m </code></pre><p>其中–launcher.XXMaxPermSize（注意最前面是两个连接线）跟-XX:MaxPermSize参数的含义基本是一样的，我觉得唯一的区别就是前者是eclipse.exe启动的时候设置的参数，<br>而后者是eclipse所使用的JVM中的参数。其实二者设置一个就可以了，所以这里可以把–launcher.XXMaxPermSize和下一行使用#注释掉。  </p><h3 id="4-其他的启动参数。"><a href="#4-其他的启动参数。" class="headerlink" title="4. 其他的启动参数。"></a>4. 其他的启动参数。</h3><p>如果你有一个双核的CPU，也许可以尝试这个参数:  </p><pre><code class="hljs">-XX:+UseParallelGC</code></pre><p>让GC可以更快的执行。（只是JDK 5里对GC新增加的参数）</p><h3 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h3><p>　　如果你的WEB APP下都用了大量的第三方jar，其大小超过了服务器jvm默认的大小，那么就会产生内存益出问题了。<br>解决方法： 设置MaxPermSize大小<br>可以在myelipse里选中相应的服务器比如tomcat5，展开里面的JDK子项页面，来增加服务器启动的JVM参数设置：  </p><pre><code class="hljs">-Xms128m -Xmx256m -XX:PermSize=128M -XX:MaxNewSize=256m -XX:MaxPermSize=256m</code></pre><p>或者手动设置MaxPermSize大小,比如tomcat，修改TOMCAT_HOME&#x2F;bin&#x2F;catalina.bat，在echo “Using CATALINA_BASE: $CATALINA_BASE”上面加入以下行：<br>JAVA_OPTS&#x3D;”-server -XX:PermSize&#x3D;64M -XX:MaxPermSize&#x3D;128m  </p><h3 id="建议："><a href="#建议：" class="headerlink" title="建议："></a>建议：</h3><p>将相同的第三方jar文件移置到tomcat&#x2F;shared&#x2F;lib目录下，这样可以减少jar 文档重复占用内存</p><p>参考：<a href="http://www.cnblogs.com/mingforyou/archive/2012/03/03/2378143.html">http://www.cnblogs.com/mingforyou/archive/2012/03/03/2378143.html</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Eclipse崩溃，错误提示：&lt;br&gt;MyEclipse has detected that less than 5% of the 64MB of Perm&lt;br&gt;Gen (Non-heap memory) space remains. It is strongly re</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="Eclipse" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/Eclipse/"/>
+    
+    
+    <category term="Eclipse" scheme="https://zbcio.github.io/tags/Eclipse/"/>
+    
+    <category term="Xmx" scheme="https://zbcio.github.io/tags/Xmx/"/>
+    
+    <category term="PermSize" scheme="https://zbcio.github.io/tags/PermSize/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Tomcat项目路径配置</title>
+    <link href="https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/Tomcat/tomcat-path/"/>
+    <id>https://zbcio.github.io/cn/%E6%8A%80%E6%9C%AF/Tomcat/tomcat-path/</id>
+    <published>2015-09-16T00:00:00.000Z</published>
+    <updated>2026-09-04T10:00:36.817Z</updated>
+    
+    <content type="html"><![CDATA[<p>Tomcat对工程的部署一般是将工程的压缩文件放在tomcat安装目录的webapps下，访问时通过键入： </p><pre><code class="hljs">http://localhost:8080/xx(假定为本机访问，xx是部署时的应用工程的访问名字）。</code></pre><p>而如果直接键入：<code>http://localhost:8080</code> 出来的将是tomcat自带的欢迎页面，如何让键入 <code>http://localhost:8080</code> 出来的是自己的应用工程的页面呢？  </p><p>在Tomcat默认安装后，tomcat的主目录是webapps&#x2F;root目录，所以如果想改变tomcat的主目录的话可以如下所做：  </p><h4 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h4><p>（假设tomcat安装在C盘下，项目名为bidding）打开C:&#x2F;Tomcat&#x2F;conf&#x2F;server.xml，在<host></host>之间加入代码：  </p><pre><code class="hljs">&lt;Context docBase=&quot;C:/Program Files/Apache Software Foundation/Tomcat 5.5/webapps/bidding&quot; path=&quot;&quot; debug=&quot;0&quot;  reloadable=&quot;true&quot;/&gt;</code></pre><p>这样重新启动tomcat，我们的主目录就被设置为bidding这个项目了。  </p><h4 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h4><p>将tomcat安装目录下的ROOT下的所有文件全部删除，然后将工程的解压后的文件全部拷进去。  </p><h4 id="方法三："><a href="#方法三：" class="headerlink" title="方法三："></a>方法三：</h4><p>Tomcat5.0以下版本在C:&#x2F;Tomcat&#x2F;conf&#x2F;Catalina&#x2F;localhost目录下会自动生成了一个ROOT.Xml，但是5.0以上版本不再生成此文件，所以可以新建个ROOT.xml,在里面加入如下代码：  </p><pre><code class="hljs">&lt;?Xml version=&#39;1.0&#39; encoding=&#39;utf-8&#39;?&gt;&lt;Context crossContext=&quot;true&quot; docBase=&quot;&quot;C:/Program Files/Apache Software Foundation/Tomcat 5.5/webapps/bidding&quot;&quot; path=&quot;&quot; reloadable=&quot;true&quot;&gt;&lt;/Context&gt;</code></pre><p>参考链接：<a href="http://jingyan.baidu.com/article/3c343ff7099ee40d37796307.html">http://jingyan.baidu.com/article/3c343ff7099ee40d37796307.html</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Tomcat对工程的部署一般是将工程的压缩文件放在tomcat安装目录的webapps下，访问时通过键入： &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;http://localhost:8080/xx(假定为本机访问，xx是部署时的应用工程的访问名字）。
+&lt;/</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="Tomcat" scheme="https://zbcio.github.io/categories/%E6%8A%80%E6%9C%AF/Tomcat/"/>
+    
+    
+    <category term="Tomcat" scheme="https://zbcio.github.io/tags/Tomcat/"/>
+    
+  </entry>
+  
+</feed>
